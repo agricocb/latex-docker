@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pushd $(dirname "${BASH_SOURCE[0]}") >/dev/null
-cd ..
+cd ../..
 PARENT_DIR="$PWD"
 popd >/dev/null
 PARENT_NAME="$(basename "$PARENT_DIR")"

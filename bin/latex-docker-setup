@@ -8,7 +8,7 @@ get_script_dir () {
 
 THIS_DIR="$(get_script_dir)"
 BASE_DIR="$(dirname "$THIS_DIR")"
-BASE_NAME="$(basename "$BASE_DIR")"
+BASE_NAME="$(basename $(dirname "$BASE_DIR"))"
 base_name="$(echo $BASE_NAME | tr ' [:upper:]' '_[:lower:]')"
 
 
