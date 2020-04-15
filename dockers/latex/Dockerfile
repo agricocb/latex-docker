@@ -5,3 +5,4 @@ RUN tlmgr install collection-fontsrecommended
 RUN tlmgr paper letter
 
 RUN tlmgr install framed preprint mathtools cancel
+RUN tlmgr install beamer etoolbox translator
