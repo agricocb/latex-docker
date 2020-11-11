@@ -9,8 +9,10 @@ RUN apt-get update && apt-get install -y software-properties-common
 RUN apt-get install -y texlive asymptote
 RUN apt-get install -y wget xzdec gnupg latexmk
 RUN tlmgr init-usertree
+RUN chmod go+x /root
 
 WORKDIR /data
 ENV HOME /home
+ENV TEXMFHOME /root/texmf
 
 VOLUME ["/data","/home"]
