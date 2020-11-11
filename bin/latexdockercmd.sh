@@ -1,11 +1,12 @@
 #!/bin/bash
 
 pushd $(dirname "${BASH_SOURCE[0]}") >/dev/null
-cd ..
-PARENT_DIR="$PWD"
+if [ ! -f .base_name ]; then
+  echo "$(pwd)/.base_name doesn't appear to exist, so you probably need to run latex-docker-setup..."
+  exit 1
+fi
+parent_name="$(cat .base_name)"
 popd >/dev/null
-PARENT_NAME="$(basename "$PARENT_DIR")"
-parent_name="$(echo $PARENT_NAME | tr ' [:upper:]' '_[:lower:]')"
 
 IMAGE="$parent_name/latex:latest"
 
